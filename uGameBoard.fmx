@@ -1,0 +1,182 @@
+object FormGameBoard: TFormGameBoard
+  Left = 0
+  Top = 0
+  Caption = 'GameBoard'
+  ClientHeight = 520
+  ClientWidth = 340
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object ToolBarTop: TToolBar
+    Size.Width = 340.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BtnBack: TButton
+      Align = MostLeft
+      IconTintColor = claGreen
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 0
+      Text = 'BtnBack'
+      OnClick = BtnBackClick
+    end
+    object Button1: TButton
+      Action = ShowShareSheetAction1
+      Align = Right
+      Enabled = True
+      IconTintColor = claGreen
+      ImageIndex = -1
+      Position.X = 292.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'actiontoolbutton'
+      TabOrder = 1
+      Visible = True
+    end
+  end
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 340.000000000000000000
+    Size.Height = 422.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 1
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    Sizes = (
+      340s
+      373s
+      340s
+      373s)
+    object TabItemGB: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.FontColor = claGreen
+      StyledSettings = [Family, Size, Style]
+      IsSelected = False
+      Size.Width = 170.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Game Board'
+      ExplicitSize.cx = 170.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object Label1: TLabel
+        Align = Top
+        StyledSettings = [Family, Style]
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 320.000000000000000000
+        Size.Height = 23.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.FontColor = claGreen
+        TextSettings.HorzAlign = Center
+        Text = 'Pick a number between 1 and 10.'
+      end
+      object EditNumber: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 1
+        KeyboardType = NumberPad
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claGreen
+        TextSettings.HorzAlign = Center
+        Position.X = 100.000000000000000000
+        Position.Y = 58.000000000000000000
+        Margins.Left = 100.000000000000000000
+        Margins.Top = 15.000000000000000000
+        Margins.Right = 100.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style]
+        KillFocusByReturn = True
+      end
+      object BtnCheck: TButton
+        Align = Top
+        StyledSettings = [Family, Size, Style]
+        Margins.Left = 100.000000000000000000
+        Margins.Top = 15.000000000000000000
+        Margins.Right = 100.000000000000000000
+        Position.X = 100.000000000000000000
+        Position.Y = 105.000000000000000000
+        Size.Width = 140.000000000000000000
+        Size.Height = 44.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Check !'
+        TextSettings.FontColor = claWhite
+        TintColor = claGreen
+        OnClick = BtnCheckClick
+      end
+    end
+    object TabItemHint: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 170.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Hint'
+      ExplicitSize.cx = 170.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object Image1: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Align = Client
+        MarginWrapMode = Original
+        Size.Width = 340.000000000000000000
+        Size.Height = 275.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Stretch
+      end
+      object BtnPlay: TButton
+        Align = MostBottom
+        StyledSettings = [Family, Size, Style]
+        IconTintColor = claGreen
+        Margins.Bottom = 50.000000000000000000
+        Position.X = 146.000000000000000000
+        Position.Y = 275.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'playtoolbutton'
+        TabOrder = 1
+        Text = 'BtnPlay'
+        TextSettings.FontColor = claWhite
+        TintColor = claGreen
+        OnClick = BtnPlayClick
+      end
+    end
+  end
+  object BannerAd1: TBannerAd
+    Align = Bottom
+    Position.Y = 470.000000000000000000
+  end
+  object ActionList1: TActionList
+    Left = 160
+    Top = 248
+    object ShowShareSheetAction1: TShowShareSheetAction
+      Category = 'Media Library'
+      OnBeforeExecute = ShowShareSheetAction1BeforeExecute
+    end
+  end
+end

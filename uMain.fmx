@@ -1,0 +1,118 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Guess the number'
+  ClientHeight = 520
+  ClientWidth = 340
+  Position = Designed
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object ToolBarTop: TToolBar
+    Size.Width = 340.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BtnInfo: TButton
+      Align = MostLeft
+      IconTintColor = claGreen
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'infotoolbutton'
+      TabOrder = 1
+      Text = 'BtnInfo'
+      OnClick = BtnInfoClick
+    end
+    object BtnShare: TButton
+      Action = ShowShareSheetAction1
+      Align = MostRight
+      Enabled = True
+      IconTintColor = claGreen
+      ImageIndex = -1
+      Position.X = 292.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'actiontoolbutton'
+      TabOrder = 0
+      Visible = True
+    end
+  end
+  object BannerAd1: TBannerAd
+    Align = MostBottom
+    Position.Y = 470.000000000000000000
+  end
+  object Layout1: TLayout
+    Align = Center
+    Size.Width = 211.000000000000000000
+    Size.Height = 154.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object BtnEasy: TButton
+      Align = Top
+      StyledSettings = [Family, Size, Style]
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 3.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 205.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Easy'
+      TextSettings.FontColor = claWhite
+      TintColor = claGreen
+      OnClick = BtnEasyClick
+    end
+    object BtnMedium: TButton
+      Align = Top
+      StyledSettings = [Family, Size, Style]
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 3.000000000000000000
+      Position.Y = 53.000000000000000000
+      Size.Width = 205.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Medium'
+      TextSettings.FontColor = claWhite
+      TintColor = claGreen
+      OnClick = BtnMediumClick
+    end
+    object BtnHard: TButton
+      Align = Top
+      StyledSettings = [Family, Size, Style]
+      Margins.Left = 3.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 3.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Position.X = 3.000000000000000000
+      Position.Y = 103.000000000000000000
+      Size.Width = 205.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Hard'
+      TextSettings.FontColor = claWhite
+      TintColor = claGreen
+      OnClick = BtnMediumClick
+    end
+  end
+  object ActionList1: TActionList
+    Left = 216
+    Top = 88
+    object ShowShareSheetAction1: TShowShareSheetAction
+      Category = 'Media Library'
+      OnBeforeExecute = ShowShareSheetAction1BeforeExecute
+    end
+  end
+end
