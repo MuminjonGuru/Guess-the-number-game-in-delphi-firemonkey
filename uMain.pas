@@ -16,12 +16,7 @@ uses
   System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Advertising, FMX.Layouts, System.Actions,
-  FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions, FMX.DialogService.Async,
-  {$IFDEF Android}
-  Androidapi.Jni.GraphicsContentViewText, Androidapi.Jni.App,
-  Androidapi.Jni.Net,
-  Androidapi.Helpers;
-  {$ENDIF}
+  FMX.ActnList, FMX.StdActns, FMX.MediaLibrary.Actions, FMX.DialogService.Async;
 
 type
   TFormMain = class(TForm)
@@ -56,7 +51,12 @@ implementation
 {$R *.fmx}
 
 Uses
-  uGameBoard, uAbout;
+  uGameBoard, uAbout,
+  {$IFDEF Android}
+  Androidapi.Jni.GraphicsContentViewText, Androidapi.Jni.App,
+  Androidapi.Jni.Net,
+  Androidapi.Helpers;
+  {$ENDIF}
 
 procedure TFormMain.BtnEasyClick(Sender: TObject);
 begin
